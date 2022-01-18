@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MAIN PAGE</title>
-	<link rel="stylesheet" href="resource/css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+ 
+    
+ 
 </head>
 <body>
-<table class="table">
-	<thead>
-	<tr>
-		<th> 번호 </th>
-		<th> 제목 </th>
-		<th> 작성자 </th>
-		<th> 날짜 </th>
-		<th> 조회수 </th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td>165</td>
-		<td> 이제 곧 bootstrap 4가 나온다면서요? </td>
-		<td> 김기범 </td>
-		<td> 2022.01.12 </td>
-		<td> 12 </td>
-	</tr>
-	</tbody>
-</table>
-<!--  부트스트랩 js 사용 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="resource/js/bootstrap.js"></script>
-<script type="text/javascript" src="resource/js/bootstrap.js"></script>
+    
+    <textarea id="myta" cols="80" rows="20"></textarea>
+ 	<button id="mybtn" onclick="doFunction()">변환 </button>
+    <textarea id="myta2" cols="80" rows="20"></textarea>
+    <script type="text/javascript">
+ 
+    
+	function doFunction() 
+	{
+		// a->b로
+		var a = document.getElementById("myta").value.split("\n");
+		var nickname, storeid, reviewid, date, contents;
+		var result;
+		nickname = a[3];
+		storeid = a[2];
+		reviewid = a[0];
+		date = a[a.length-2].substring(0,10);
+		contents = a[6];
+		result = "■  [리뷰게시 중단 요청]\n닉네임 : "+nickname+"\n가게번호 : "+storeid+"\n리뷰번호 : "+reviewid+"\n작성일자 : "+date+"\n작성내용 : "+contents;
+		document.getElementById("myta2").value = result;
+	}
+    </script>
+ 
 </body>
 </html>
